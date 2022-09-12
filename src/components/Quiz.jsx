@@ -1,25 +1,16 @@
-import { nanoid } from 'nanoid'
 import React from 'react'
 import Option from './Option'
 
-export default function Quiz({question, allOptions, handleClick, quizId}) {
-
-  console.log(allOptions)
-  const options = allOptions.map(option => {
-    return <Option 
-      key={nanoid()} 
-      option={option.value} 
-      stat={option.stat}
-      handleClick={handleClick}
-      quizId={quizId}
-    />
-  })
+export default function Quiz() {
 
   return (
     <div className='quiz'>
-        <h2 className='quiz--title'>{question}</h2>
+        <h2 className='quiz--title'>How would one say goodbye in Spanish?</h2>
         <div className="quiz--btns">
-          {options}
+          <Option />
+          <Option />
+          <Option />
+          <Option />
         </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Option({option, handleClick, stat, quizId}) {
+export default function Option() {
   return (
-    <button className='quiz--btn' onClick={evt => handleClick(evt, quizId)} data-correct={stat}>{option}</button> 
+    <button className='quiz--btn' >Au Revoir</button> 
   )
 }
