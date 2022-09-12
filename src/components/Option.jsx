@@ -1,17 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export default function Option({value, handleClick, selected, matchAns}) {
-  console.log(matchAns)
+export default function Option({option, handleClick, stat, quizId}) {
   return (
-    <button 
-      className={`
-        quiz--btn 
-        ${selected && 'quiz--btn__selected'} 
-        ${selected && matchAns && 'quiz--btn__false'}
-      `}
-      onClick={handleClick}
-    >
-      {value}
-    </button>
+    <button className='quiz--btn' onClick={evt => handleClick(evt, quizId)} data-correct={stat}>{option}</button> 
   )
 }

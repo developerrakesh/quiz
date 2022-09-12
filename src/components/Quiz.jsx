@@ -1,28 +1,17 @@
-import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react'
+import { nanoid } from 'nanoid'
+import React from 'react'
 import Option from './Option'
 
-export default forwardRef(function Quiz({question, allOptions, correctAns}, ref) {
-  const [selectedBtnId, setSelectedBtnId] = useState("")
-  const [matchAns, setMatchAns] = useState(false)
+export default function Quiz({question, allOptions, handleClick, quizId}) {
 
-  useImperativeHandle(ref, () => {
-    return {
-      consol: () => setMatchAns(true)
-    }
-  })
-
-  function btnClicked(id) {
-    console.log(id)
-    setSelectedBtnId(id)
-  }
+  console.log(allOptions)
   const options = allOptions.map(option => {
-    const id = option
     return <Option 
-      key={id} 
-      value={option} 
-      handleClick={() => btnClicked(id)} 
-      selected={selectedBtnId === id} 
-      matchAns={matchAns}
+      key={nanoid()} 
+      option={option.value} 
+      stat={option.stat}
+      handleClick={handleClick}
+      quizId={quizId}
     />
   })
 
@@ -34,4 +23,4 @@ export default forwardRef(function Quiz({question, allOptions, correctAns}, ref)
         </div>
     </div>
   )
-})
+}
