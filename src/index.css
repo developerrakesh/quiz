@@ -99,7 +99,7 @@ button {
   text-align: center;
 }
 
-.main--check {
+.main--check, .main--play-again {
   background: #4D5B9E;
   border-radius: 10px;
   padding: 10px 22px;
@@ -169,4 +169,9 @@ button {
   opacity: .5;
   background: #F8BCBC;
   border: none;
+}
+
+.inert {
+  pointer-events: none;
+  cursor: default;
 }
