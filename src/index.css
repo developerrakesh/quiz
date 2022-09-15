@@ -51,25 +51,21 @@ button {
   transition: border-color 0.25s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 .container {
   max-width: 550px;
-  padding: 40px 75px;
+  padding: 25px;
   min-height: 100vh;
   margin-inline: auto;
   background: url("./assets/bg1.svg") no-repeat right top #F5F7FB;
 }
 
-.start {
+@media screen and (min-width: 500px) {
+  .container {
+    padding: 40px 75px;
+  }
+}
+
+.start, .select {
   text-align: center;
 }
 
@@ -80,7 +76,7 @@ button {
   margin: 0 0 7px;
 }
 
-.start--button {
+.start--button, .select--button {
   padding: 16px 54px;
   background: #4D5B9E;
   border-radius: 15px;
@@ -89,6 +85,20 @@ button {
   line-height: 19px;
   color: #F5F7FB;
   margin-top: 30px;
+}
+
+.select--button {
+  margin-top: 20px;
+  padding: 12px 50px;
+}
+
+.select--label {
+  margin-right: 10px;
+}
+
+.select--select {
+  padding: 3px 0;
+  margin-top: 5px;
 }
 
 .loading {

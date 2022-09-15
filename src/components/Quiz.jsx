@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid'
 import React, { useContext } from 'react'
 import { QuizContext } from '../context'
 import Option from './Option'
+import { decode } from 'html-entities'
 
 export default function Quiz({question, id}) {
   const {state, dispatch} = useContext(QuizContext)
@@ -17,7 +18,7 @@ export default function Quiz({question, id}) {
 
   return (
     <div className='quiz' id={id}>
-        <h2 className='quiz--title'>{question}</h2>
+        <h2 className='quiz--title'>{decode(question)}</h2>
         <div className="quiz--btns">
           {option}
         </div>
