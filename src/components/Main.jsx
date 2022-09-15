@@ -10,6 +10,7 @@ export default function Main() {
   const handleClick = useContext(AnsContext)
   const { width, height } = useWindowSize()
   useEffect(() => {
+    //from site https://opentdb.com/api_config.php
     const url = `https://opentdb.com/api.php?amount=5&category=${state.category}&difficulty=easy&type=multiple`
     const myAbortController = new AbortController();
     (async () => {
